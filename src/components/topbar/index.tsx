@@ -16,11 +16,14 @@ const TopBar = () => {
           <LogoContainer>
             <FaCross size={26} />
             <h1>
-            <span>We</span>Biblia
+              <span>We</span>Biblia
             </h1>
           </LogoContainer>
           <ControlsContainer>
-            <a href="#">
+            <a
+              href="https://github.com/LucioHenrique512/webiblia"
+              target="blank"
+            >
               <FaGithub size={23} />
             </a>
           </ControlsContainer>

@@ -25,4 +25,7 @@ export const LogoContainer = styled.div`
 export const ControlsContainer = styled.div`
   display: flex;
   align-items: center;
+  a {
+    color: #000;
+  }
 `;
