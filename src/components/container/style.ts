@@ -8,7 +8,7 @@ export const DefaultContainer = styled.div`
 
 export const Wrapper = styled.div`
   width: 80vw;
-  @media (max-width: 1000px) {
+  @media (max-width: 1200px) {
   width: 95vw;
   }
 `;

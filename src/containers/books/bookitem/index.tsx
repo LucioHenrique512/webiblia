@@ -1,8 +1,17 @@
 import React from "react";
-import { BookContainer, BookContent } from "./style";
+import {
+  BookContainer,
+  BookContent,
+  LeftContainer,
+  InfoContainer,
+  Name,
+  Author,
+  Group,
+  Abbrev,
+} from "./style";
 
 interface propstypes {
-  abbrev: Object;
+  abbrev: any;
   author: String;
   chapters: String;
   group: String;
@@ -10,14 +19,18 @@ interface propstypes {
   testament: String;
 }
 
-const BookItem = ({ name, group, testament, author }: propstypes) => {
+const BookItem = ({ name, group, testament, author, abbrev }: propstypes) => {
   return (
     <BookContainer>
       <BookContent>
-        <h2>{name}</h2>
-        <h3>{group}</h3>
-        <h3>Testamento: {testament}</h3>
-        <h4>Autor: {author}</h4>
+        <LeftContainer>
+          <Abbrev>{abbrev.pt}</Abbrev>
+        </LeftContainer>
+        <InfoContainer>
+          <Name isBig={name.length > 15}>{name}</Name>
+          <Author isBig={author.length > 15}>Autor: {author}</Author>
+          <Group>{group}</Group>
+        </InfoContainer>
       </BookContent>
     </BookContainer>
   );

@@ -11,6 +11,9 @@ html,body #root {
     height: 100vh;
 }
 body{
-    font-family: 'Roboto', sans-serif;
+    transition: .1s;
+   font-family: 'Roboto', sans-serif;
+   overflow-x: hidden;
+   background: ${({ theme }) => theme.colors.background};
 }
 `;
