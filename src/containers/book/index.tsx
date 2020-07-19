@@ -15,7 +15,6 @@ interface BookProps {
 }
 
 const Book = ({ book, loading }: BookProps) => {
-  const { name, author, group, testament }: any = book;
 
   const getTestament = (testament: string) => {
     switch (testament) {
@@ -35,10 +34,10 @@ const Book = ({ book, loading }: BookProps) => {
       ) : (
         <BookContainer>
           <Header>
-            <BookName>{name}</BookName>
-            <BookTestament>{getTestament(testament)}</BookTestament>
-            <BookAuthor>Autor: {author}</BookAuthor>
-            <BookGroup>Grupo: {group}</BookGroup>
+            <BookName>{book.name}</BookName>
+            <BookTestament>{getTestament(book.testament)}</BookTestament>
+            <BookAuthor>Autor: {book.author}</BookAuthor>
+            <BookGroup>Grupo: {book.group}</BookGroup>
           </Header>
         </BookContainer>
       )}
