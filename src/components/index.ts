@@ -1,4 +1,4 @@
 import Container from "./container";
 import TopBar from "./topbar";
-
-export { Container, TopBar };
+import Loading from "./loading";
+export { Container, TopBar, Loading };

@@ -8,6 +8,7 @@ export const TopbarContainer = styled.header`
   position: fixed;
   background-color: ${({ theme }) => theme.colors.background};
   border-bottom: 1px solid ${({ theme }) => theme.colors.border};
+  z-index: 9;
 `;
 export const Content = styled.div`
   display: flex;

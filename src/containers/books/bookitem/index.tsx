@@ -9,6 +9,8 @@ import {
   Group,
   Abbrev,
 } from "./style";
+import { useHistory } from "react-router-dom";
+import { routenames } from "../../../constants";
 
 interface propstypes {
   abbrev: any;
@@ -20,8 +22,14 @@ interface propstypes {
 }
 
 const BookItem = ({ name, group, testament, author, abbrev }: propstypes) => {
+  const history = useHistory();
+
+  const handleClick = () => {
+    history.push(`${routenames.BOOK}/${abbrev.pt}`);
+  };
+
   return (
-    <BookContainer>
+    <BookContainer onClick={handleClick}>
       <BookContent>
         <LeftContainer>
           <Abbrev>{abbrev.pt}</Abbrev>

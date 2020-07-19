@@ -9,7 +9,7 @@ import {
 } from "./style";
 import { FaCross, FaGithub, FaSun, FaMoon } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleDarkMode } from "./actions";
+import { utilsActions } from "../../actions";
 
 const TopBar = () => {
   const { utils }: any = useSelector((store) => store);
@@ -17,7 +17,7 @@ const TopBar = () => {
   const dispatch = useDispatch();
 
   const handleToggleDarkMode = () => {
-    dispatch(toggleDarkMode());
+    dispatch(utilsActions.toggleDarkMode());
   };
 
   return (

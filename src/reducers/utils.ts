@@ -1,4 +1,6 @@
-import { types } from "../components/topbar/actions";
+import { utilsActions } from "../actions";
+const { types } = utilsActions;
+
 const INIT_STATE = {
   darkMode: false,
 };
