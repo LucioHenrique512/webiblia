@@ -10,15 +10,20 @@ const INIT_STATE = {
 
 const bible = (state = INIT_STATE, action: any) => {
   switch (action.type) {
-    case types.SET_CURRENT_BOOK:
-      return {
-        ...state,
-        selectedBook: action.payload,
-      };
     case types.SET_BOOKS_LIST:
       return {
         ...state,
         books: action.payload,
+      };
+    case types.SET_SELECTED_BOOK:
+      return {
+        ...state,
+        selectedBook: action.payload,
+      };
+    case types.SET_CURRENT_BOOK:
+      return {
+        ...state,
+        currentBook: action.payload,
       };
     default:
       return state;

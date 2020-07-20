@@ -19,7 +19,7 @@ const BookRoute = () => {
         .then((response) => {
           if (response) {
             const { data } = response;
-            dispatch(bibileActions.setCurrentBookState(data));
+            dispatch(bibileActions.setSelectedBookState(data));
           }
         })
         .catch((err) => console.error(err.message));
@@ -27,7 +27,7 @@ const BookRoute = () => {
     if (bookCondition) getBookDetails();
   }, [abbrev, bookCondition, dispatch]);
 
-  return <Book book={selectedBook} loading={bookCondition} />;
+  return <Book book={selectedBook} loading={bookCondition} abbrev={abbrev} />;
 };
 
 export default BookRoute;

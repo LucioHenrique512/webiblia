@@ -1,5 +1,6 @@
 export const types = {
   SET_BOOKS_LIST: "SET_BOOKS_LIST",
+  SET_SELECTED_BOOK: "SET_SELECTED_BOOK",
   SET_CURRENT_BOOK: "SET_CURRENT_BOOK",
 };
 
@@ -8,7 +9,13 @@ export const setBooksState = (response: Array<Object>) => ({
   payload: response,
 });
 
-export const setCurrentBookState = (response: Object) => ({
+export const setSelectedBookState = (response: Object) => ({
+  type: types.SET_SELECTED_BOOK,
+  payload: response,
+});
+
+export const setCurrentBook = (response: Object) => ({
   type: types.SET_CURRENT_BOOK,
   payload: response,
 });
+

@@ -10,6 +10,6 @@ export const Wrapper = styled.div`
   position: relative;
   width: 80vw;
   @media (max-width: 1200px) {
-    width: 95vw;
+    width: 89vw;
   }
 `;

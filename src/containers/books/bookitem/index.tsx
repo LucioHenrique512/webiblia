@@ -25,7 +25,7 @@ const BookItem = ({ name, group, testament, author, abbrev }: propstypes) => {
   const history = useHistory();
 
   const handleClick = () => {
-    history.push(`${routenames.BOOK}/${abbrev.pt}`);
+    history.push(`${routenames.BOOKS}/${abbrev.pt}`);
   };
 
   return (
