@@ -44,7 +44,7 @@ const TextRoute = () => {
       data={currentBook}
       abbrev={abbrev}
       chapter={chapter}
-      chapters={selectedBook.chapters}
+      chapters={selectedBook?.chapters}
     />
   );
 };
