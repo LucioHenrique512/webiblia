@@ -4,6 +4,7 @@ import BooksRoute from "./booksroute";
 import { routenames } from "../constants";
 import BookRoute from "./bookroute";
 import HolyTextRoute from "./holytextroute";
+import NoMatchRoute from "./nomatchroute";
 
 const Routes = () => {
   return (
@@ -19,6 +20,9 @@ const Routes = () => {
       </Route>
       <Route exact path={`${routenames.BOOKS}/:abbrev/:chapter`}>
         <HolyTextRoute />
+      </Route>
+      <Route>
+        <NoMatchRoute />
       </Route>
     </Switch>
   );

@@ -12,7 +12,7 @@ export const BookAuthor = styled.p`
   font-weight: bold;
   margin-top: 10px;
 `;
-export const BookGroup = styled.picture`
+export const BookGroup = styled.p`
   font-weight: bold;
 `;
 export const BookTestament = styled.p`

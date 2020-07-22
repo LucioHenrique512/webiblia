@@ -5,12 +5,14 @@ import { useSelector, useDispatch } from "react-redux";
 import { bibleApi } from "../../modules/api";
 import { endpoints } from "../../constants";
 import { bibileActions } from "../../actions";
+import { useHistory } from "react-router-dom";
 
 const BookRoute = () => {
   const { abbrev }: any = useParams();
   const dispatch = useDispatch();
   const { selectedBook } = useSelector((state: any) => state.bible);
   const bookCondition = !selectedBook || selectedBook.abbrev.pt !== abbrev;
+  const history = useHistory();
 
   useEffect(() => {
     const getBookDetails = () => {
@@ -22,10 +24,13 @@ const BookRoute = () => {
             dispatch(bibileActions.setSelectedBookState(data));
           }
         })
-        .catch((err) => console.error(err.message));
+        .catch((err) => {
+          console.error(err.message);
+          history.push("/book#error");
+        });
     };
     if (bookCondition) getBookDetails();
-  }, [abbrev, bookCondition, dispatch]);
+  }, [abbrev, bookCondition, dispatch, history]);
 
   return <Book book={selectedBook} loading={bookCondition} abbrev={abbrev} />;
 };

@@ -5,11 +5,15 @@ import { bibleApi } from "../../modules/api";
 import { endpoints } from "../../constants";
 import { bibileActions } from "../../actions";
 import { HolyText } from "../../containers";
+import { useHistory } from "react-router-dom";
 
 const TextRoute = () => {
   const { abbrev, chapter }: any = useParams();
-  const { currentBook }: any = useSelector((state: any) => state.bible);
+  const { currentBook, selectedBook }: any = useSelector(
+    (state: any) => state.bible
+  );
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const chapterCondition: boolean =
     !currentBook ||
@@ -27,15 +31,21 @@ const TextRoute = () => {
           }
         })
         .catch((err) => {
-          console.log(err)
-          console.log("deu erro")
+          console.log(err);
+          console.log("deu erro");
+          history.push("/holytext#error");
         });
     };
     if (chapterCondition) getCurrentBook();
-  }, [abbrev, chapter, dispatch, chapterCondition]);
-
+  }, [abbrev, chapter, dispatch, chapterCondition, history]);
   return (
-    <HolyText loading={chapterCondition} data={currentBook} abbrev={abbrev} />
+    <HolyText
+      loading={chapterCondition}
+      data={currentBook}
+      abbrev={abbrev}
+      chapter={chapter}
+      chapters={selectedBook.chapters}
+    />
   );
 };
 

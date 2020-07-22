@@ -4,10 +4,12 @@ import { bibleApi } from "../../modules/api";
 import { endpoints } from "../../constants";
 import { useSelector, useDispatch } from "react-redux";
 import { bibileActions } from "../../actions";
+import { useHistory } from "react-router-dom";
 
 const BooksRoute = () => {
   const { books }: any = useSelector((state: any) => state.bible);
   const dispatch = useDispatch();
+  const history = useHistory();
 
   useEffect(() => {
     const getBooks = () => {
@@ -19,10 +21,13 @@ const BooksRoute = () => {
             dispatch(bibileActions.setBooksState(data));
           }
         })
-        .catch((err) => console.log(err.message));
+        .catch((err) => {
+          console.log(err.message);
+          history.push("/books#error");
+        });
     };
     if (books.length === 0) getBooks();
-  }, [books, dispatch]);
+  }, [books, dispatch,history]);
 
   return <Books data={books} loading={books.length === 0} />;
 };
