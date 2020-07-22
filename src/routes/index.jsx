@@ -21,7 +21,7 @@ const Routes = () => {
       <Route exact path={`${routenames.BOOKS}/:abbrev/:chapter`}>
         <HolyTextRoute />
       </Route>
-      <Route>
+      <Route path="*">
         <NoMatchRoute />
       </Route>
     </Switch>
