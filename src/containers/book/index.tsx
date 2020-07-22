@@ -62,7 +62,7 @@ const Book = ({ book, loading, abbrev }: BookProps) => {
             <h2>Detalhes do livro</h2>
             <DetailsContent>
               <OptionsCard
-                title="Livros"
+                title="Capítulos"
                 numberOfOptions={book.chapters}
                 onOptionClick={handleClickChapter}
               />
