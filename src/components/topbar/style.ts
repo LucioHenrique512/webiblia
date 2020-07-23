@@ -1,5 +1,8 @@
 import styled from "styled-components";
 import { sizes } from "../../constants";
+import { Link } from "react-router-dom";
+
+
 
 export const TopbarContainer = styled.header`
   height: ${sizes.TOP_BAR_HEIGHT}px;
@@ -14,7 +17,8 @@ export const Content = styled.div`
   display: flex;
   justify-content: space-between;
 `;
-export const LogoContainer = styled.div`
+
+export const LogoContainer = styled(Link)`
   display: flex;
   align-items: center;
   width: 200px;
