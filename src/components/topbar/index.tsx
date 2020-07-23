@@ -24,7 +24,7 @@ const TopBar = () => {
     <TopbarContainer>
       <Container>
         <Content>
-          <LogoContainer>
+          <LogoContainer to="/">
             <FaCross size={26} />
             <h1>
               <span>We</span>Biblia
