@@ -23,6 +23,7 @@ export const LogoContainer = styled(Link)`
   align-items: center;
   width: 200px;
   color: ${({ theme }) => theme.colors.text};
+  text-decoration: none;
   span {
     font-weight: 300;
   }
