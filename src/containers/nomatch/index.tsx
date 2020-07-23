@@ -25,7 +25,7 @@ const NoMatch = () => {
 
         <Text>
           O Conteudo que você está buscando não foi encontrado ou ocorreu algum
-          erro, pedimos descilpas pelo incoveniente{" "}
+          erro, pedimos desculpas pelo incoveniente{" "}
           <span role="img" aria-label="sad emoji">
             😕
           </span>
