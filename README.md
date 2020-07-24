@@ -6,9 +6,10 @@ WeBiblia is a Bible webapp implemented for study purposes.
 
 ***
 
-![mobile](/preview/mobile.gif)
-![mobile](/preview/desktop.gif)
-
+<div align="center">
+  <img  height="300" src="/preview/desktop.gif">
+  <img  height="300" src="/preview/mobile.gif">
+</div>
 
 #### Motivations
 
