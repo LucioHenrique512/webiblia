@@ -5,11 +5,18 @@ import { endpoints } from "../../constants";
 import { useSelector, useDispatch } from "react-redux";
 import { bibileActions } from "../../actions";
 import { useHistory } from "react-router-dom";
+import { testamentFilter } from "../../modules/bookshelpers";
 
 const BooksRoute = () => {
-  const { books }: any = useSelector((state: any) => state.bible);
+  const { books, newTestament, oldTestament }: any = useSelector(
+    (state: any) => state.bible
+  );
   const dispatch = useDispatch();
   const history = useHistory();
+  const booksCondition =
+    books.length === 0 ||
+    newTestament?.length === 0 ||
+    oldTestament?.length === 0;
 
   useEffect(() => {
     const getBooks = () => {
@@ -18,7 +25,11 @@ const BooksRoute = () => {
         .then((response) => {
           if (response) {
             const { data } = response;
+            const { newTestament, oldTestament } = testamentFilter(data);
             dispatch(bibileActions.setBooksState(data));
+            dispatch(
+              bibileActions.setTestamentBooksState(newTestament, oldTestament)
+            );
           }
         })
         .catch((err) => {
@@ -26,10 +37,15 @@ const BooksRoute = () => {
           history.push("/books#error");
         });
     };
-    if (books.length === 0) getBooks();
-  }, [books, dispatch,history]);
+    if (booksCondition) getBooks();
+  }, [books, dispatch, history, booksCondition]);
 
-  return <Books data={books} loading={books.length === 0} />;
+  return (
+    <Books
+      data={{ newTestament, oldTestament, books }}
+      loading={books.length === 0}
+    />
+  );
 };
 
 export default BooksRoute;

@@ -3,6 +3,8 @@ const { types } = bibileActions;
 
 const INIT_STATE = {
   books: [],
+  oldTestament: [],
+  newTestament: [],
   selectedBook: null,
   currentBook: null,
   currentVerse: null,
@@ -14,6 +16,12 @@ const bible = (state = INIT_STATE, action: any) => {
       return {
         ...state,
         books: action.payload,
+      };
+    case types.SET_BOOK_TESTAMENTS_LIST:
+      return {
+        ...state,
+        oldTestament: action.payload.oldTestament,
+        newTestament: action.payload.newTestament,
       };
     case types.SET_SELECTED_BOOK:
       return {
