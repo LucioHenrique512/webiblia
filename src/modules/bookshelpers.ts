@@ -1,5 +1,5 @@
 interface book {
-  abbrev: Object;
+  abbrev: any;
   author: string;
   chapters: number;
   group: string;
@@ -23,4 +23,8 @@ export const filterBooksByName = (query: string, books: Array<book>) => {
         book.name.toLowerCase().includes(query.toLowerCase())
       )
     : [];
+};
+
+export const filterBookByAbbrev = (query: string, books: Array<book>) => {
+  return books.find((book) => book.abbrev.pt === query);
 };
