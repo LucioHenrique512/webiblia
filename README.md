@@ -20,7 +20,17 @@ WeBiblia is a Bible webapp implemented for study purposes.
 * Stored application state with [redux-persist](https://www.npmjs.com/package/redux-persist).
 * A cool application for my github
 
-##### You can run this project
+
+#### Main technologies
+
+* [ReactJS](https://pt-br.reactjs.org/)
+* [redux](https://redux.js.org/)
+* [redux-persist](https://www.npmjs.com/package/redux-persist)
+* [styled-components](https://styled-components.com/)
+* [react-router-dom](https://reactrouter.com/web/guides/quick-start)
+
+
+#### You can run this project
 
 On folder of this project run the commands below.
 
