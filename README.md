@@ -6,24 +6,8 @@ WeBiblia is a Bible webapp implemented for study purposes.
 
 ***
 
-<style>
-.img-container{
-    display:flex;
-    align-items: center;
-    justify-content: center;
-}
-.desktop{
-    height: 290px;
-    margin-right: 20px;
-}
-.mobile{
-    height: 290px;
-}
-</style>
-<div class="img-container">
- <img class="desktop" src="/preview/desktop.gif">
- <img class="mobile" src="/preview/mobile.gif">
-</div>
+![mobile](/preview/mobile.gif)
+![mobile](/preview/desktop.gif)
 
 
 #### Motivations
