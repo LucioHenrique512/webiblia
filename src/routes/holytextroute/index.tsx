@@ -21,8 +21,8 @@ const TextRoute = () => {
     currentBook.chapter.number.toString() !== chapter;
 
   useEffect(() => {
+    setCurrentBookTemp(filterBookByAbbrev(abbrev, books));
     const getCurrentBook = () => {
-      setCurrentBookTemp(filterBookByAbbrev(abbrev, books));
       bibleApi
         .get(`${endpoints.bibleApi.GET_VERSES}/${abbrev}/${chapter}`)
         .then((response) => {
