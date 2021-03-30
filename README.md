@@ -1,4 +1,5 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/70e8c99f-5170-49c6-bae2-f9c7bf7f6c11/deploy-status)](https://app.netlify.com/sites/webiblia/deploys)
+[![codebeat badge](https://codebeat.co/badges/16e882f6-2f62-44be-a290-0027f2542748)](https://codebeat.co/projects/github-com-luciohenrique512-webiblia-master)
 
 # WeBiblia
 
